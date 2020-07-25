@@ -1,0 +1,76 @@
+{% extends "webapp/index.html" %}
+{% block content %}
+<table class="layui-table" lay-skin="line">
+  <colgroup>
+    <col width="150">
+    <col width="150">
+    <col width="200">
+    <col>
+  </colgroup>
+  <thead>
+    <tr class="layui-bg-green">
+      <th>软件名称</th>
+      <th>版本</th>
+      <th style="width: 500px;">说明</th>
+      <th>位置</th>
+    <th>状态</th>
+    <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for items in softs %}
+      <tr>
+        <td class="td-install"><img src="{{ items.image }}" class="soft-icon">{{ items.softname }}</td>
+        <td id="softv">{{ items.version }}</td>
+        <td style="width: 500px;">{{ items.introduce }}</td>
+        {% if items.dir == "0" %}
+             <td>未安装</td>
+             <td><a href="javascript:;">未安装</a></td>
+                {% if items.status == 3 %}
+                    <td><i class="layui-icon layui-icon-loading layui-icon layui-anim layui-anim-rotate layui-anim-loop" title="安装中,请稍等10-20分钟刷新查看结果..."></i></td>
+                {% else %}
+                    <td><a href="javacript:;" class="install-soft" name="{{ items.softname }}">未安装</a></td>
+                {% endif %}
+        {% else %}
+            <td><a href="javascript:;" class="soft-dir"><i class="layui-icon layui-icon-list soft-install" title="软件位置"></i></a></td>
+                {% if items.status == 1 %}
+                    <td><a href="javascript:;"><i class="layui-icon layui-icon-triangle-r" style="font-size:20px;color:green;"></i></a></td>
+                {% elif items.status == 2 %}
+                    <td><a href="javascript:;"><i class="layui-icon layui-icon-circle-dot" style="font-size:15px;color:red;"></i></a></td>
+                {% endif %}
+            <td style="color:green;"><span class="soft-setting" style="cursor: pointer;">设置</span> | <span class="soft-uninstall" style="cursor: pointer;">卸载</span></td>
+        {% endif %}
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock content %}
+{% block endscript %}
+<script>
+    $(".install-soft").click(function () {
+        var this_soft = $(this);
+        layer.confirm("确定安装吗？",{icon:3},function (index) {
+            //移除当前绑定事件
+            this_soft.unbind();
+            let name = this_soft.attr('name');
+            let softv = this_soft.parent().parent().find("#softv").text();
+            this_soft.html('<i class="layui-icon layui-icon-loading layui-icon layui-anim layui-anim-rotate layui-anim-loop" title="安装中,请稍等10-20分钟刷新查看结果..."  style="color:green;"></i>');
+            $.post("/installsoft","softname="+name+"&flag="+softv,function (result) {
+                if(result == "ok"){
+                    layer.msg("软件已经加入安装计划，请稍后查看安装结果.");
+                }
+                else if(result == "False"){
+                    this_soft.text("未安装");
+                    layer.msg("安装失败,请稍后再试");
+                }
+                else{
+                    this_soft.text("未安装");
+                    layer.msg(result + " 还没有安装完成，请稍后再安装!");
+                }
+            });
+            //关闭弹出层
+            layer.close(index);
+        });
+    });
+</script>
+{% endblock %}

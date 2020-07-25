@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="85e880fc-8d3c-431f-895b-a0e546a3653b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/django_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/django_test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shell/mysql.sh" beforeDir="false" afterPath="$PROJECT_DIR$/shell/mysql.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/templates/webapp/addsite.html" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/templates/webapp/addsite.html" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db [2]" type="feb32156:DbDataSourceImpl" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="CSS File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1UUzpAVDxfI701vsFragWdj1Esd" />
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="sqlite" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="django_test" is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="django_test" />
+      </console-settings>
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\python_study\django_test\webapp" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="django_test" type="Python.DjangoServer" factoryName="Django server">
+      <module name="django_test" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="85e880fc-8d3c-431f-895b-a0e546a3653b" name="Default Changelist" comment="" />
+      <created>1575426141600</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1575426141600</updated>
+      <workItem from="1575426153727" duration="15487000" />
+      <workItem from="1575508567385" duration="5780000" />
+      <workItem from="1575593514512" duration="10084000" />
+      <workItem from="1575697398129" duration="6579000" />
+      <workItem from="1575705169675" duration="6399000" />
+      <workItem from="1575955811328" duration="1803000" />
+      <workItem from="1576026118417" duration="16141000" />
+      <workItem from="1576310700172" duration="21954000" />
+      <workItem from="1576369560278" duration="14441000" />
+      <workItem from="1576827657065" duration="2989000" />
+      <workItem from="1577066717171" duration="14745000" />
+      <workItem from="1577094380983" duration="1000" />
+      <workItem from="1577148725663" duration="12984000" />
+      <workItem from="1577175674564" duration="1246000" />
+      <workItem from="1577342242165" duration="2085000" />
+      <workItem from="1577426025751" duration="3568000" />
+      <workItem from="1577500606585" duration="11082000" />
+      <workItem from="1577943697232" duration="1209000" />
+      <workItem from="1578363808516" duration="1000" />
+      <workItem from="1578386837911" duration="23000" />
+      <workItem from="1578531196779" duration="611000" />
+      <workItem from="1583130944796" duration="33000" />
+      <workItem from="1583131057109" duration="4402000" />
+      <workItem from="1583215513236" duration="13128000" />
+      <workItem from="1583300629154" duration="15243000" />
+      <workItem from="1583568562411" duration="3525000" />
+      <workItem from="1583738503981" duration="3740000" />
+      <workItem from="1583804057323" duration="7585000" />
+      <workItem from="1589003167258" duration="2226000" />
+      <workItem from="1589011650802" duration="7322000" />
+      <workItem from="1589175949942" duration="5731000" />
+      <workItem from="1589185202445" duration="4314000" />
+      <workItem from="1589266084166" duration="4078000" />
+      <workItem from="1589359733722" duration="2141000" />
+      <workItem from="1589439947011" duration="3476000" />
+      <workItem from="1589535843677" duration="1480000" />
+      <workItem from="1589792196220" duration="1198000" />
+      <workItem from="1589850621493" duration="9473000" />
+      <workItem from="1589953530907" duration="5714000" />
+      <workItem from="1590109351871" duration="6646000" />
+      <workItem from="1590125278066" duration="3088000" />
+      <workItem from="1590222966349" duration="13780000" />
+      <workItem from="1590288778306" duration="2515000" />
+      <workItem from="1590367569629" duration="7412000" />
+      <workItem from="1595592374010" duration="641000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/webapp/templates/webapp/addsite.html</url>
+          <line>188</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

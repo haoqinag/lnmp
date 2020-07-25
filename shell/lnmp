@@ -1,0 +1,34 @@
+#！/bin/bash
+#
+start(){
+	netstat -tunpl |grep 8000 >/dev/null 2>&1
+	[ $? -eq 0 ] && pkill -9 python3
+	[ -d '/www/wwwlogs' ] || mkdir /www/wwwlogs
+	nohup /www/panel/python3/bin/python3 /www/panel/lnmp/manage.py runserver 0.0.0.0:8000 >/www/wwwlogs/lnmp.log 2>&1 &
+	echo "start success"
+}
+
+stop(){
+	netstat -tunpl |grep 8000 >/dev/null 2>&1
+	[ $? -eq 0 ] && pkill -9 python3 && echo  "stop success" || echo "lnmp is not running" 
+}
+
+restart(){
+	stop
+	sleep 1
+	start
+}
+case $1 in
+	start)
+		start
+		;;
+	stop)
+		stop
+		;;
+	restart)
+		restart
+		;;
+	*)
+		echo "Only support start|stop|restart"
+		;;
+esac

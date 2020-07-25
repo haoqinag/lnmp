@@ -1,0 +1,76 @@
+{% extends 'webapp/index.html' %}
+{% block content %}
+<div class="containers tag-color">
+    <div style="padding:10px 0px;display: block">
+       <button type="button" class="layui-btn layui-btn-sm" id="addsite">添加网站</button>
+       <button class="layui-btn layui-btn-primary layui-btn-sm">修改默认页</button>
+       <button class="layui-btn layui-btn-primary layui-btn-sm">默认站点</button>
+       <button class="layui-btn layui-btn-primary layui-btn-sm" id="sitetag">站点分类</button>
+    </div>
+</div>
+<table class="layui-table" lay-skin="line">
+  <colgroup>
+    <col width="30">
+    <col width="200">
+    <col width="100">
+    <col width="300">
+    <col width="300">
+    <col width="200">
+    <col>
+  </colgroup>
+  <thead>
+    <tr style="background-color:#e6e6e6">
+      <th ><input type="checkbox" id="checkall"></th>
+      <th>站点名</th>
+      <th>状态</th>
+      <th>域名</th>
+      <th>根目录</th>
+      <th>备注</th>
+      <th style="text-align:right;">操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for site in sites %}
+    <tr>
+        <td><input type="checkbox" id="{{ site.id }}"></td>
+        <td>{{ site.note }}</td>
+        <td>运行中</td>
+        <td>{{ site.domain }}</td>
+        <td>{{ site.siteroot }}</td>
+        <td>{{ site.note }}</td>
+        <td style="text-align: right;"><a href="javascript:;" style="color:green;" id="{{ site.id }}" onclick="del_site(this)">删除</a>|<a href="javascript:;" style="color:green;">设置</a></td>
+    </tr>
+
+    {% endfor %}
+
+  </tbody>
+</table>
+{% endblock %}
+{% block endscript %}
+<script>
+    $('#sitetag').click(function () {
+        layer.open({
+            type:2,
+            title:"站点分类",
+            content:'/tag',
+            shade:[0.5,'#393D49'],
+            area:['310px','280px'],
+            closeBtn:2
+        });
+    });
+function del_site(obj) {
+    var id = $(obj).attr('id');
+    layer.confirm("确实删除吗?",{icon:3},function (index) {
+        $.post("/op_site",{"method":"del","id":id},function (data) {
+        if (data == 200){
+            layer.msg("删除成功!",{icon:6,time:500},function () {
+                $('#'+id).parent().parent().remove();
+            })
+        }
+    });
+        layer.close(index);
+    })
+
+}
+</script>
+{% endblock %}

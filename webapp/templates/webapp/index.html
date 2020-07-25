@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>后台管理页面</title>
+    <link rel="stylesheet" href="/static/css/layui.css">
+    <link rel="stylesheet" href="/static/css/admin.css">
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo">后台管理页面</div>
+        <ul class="layui-nav layui-layout-left">
+            <li class="layui-nav-item"><a href="softinstall">软件安装</a></li>
+            <li class="layui-nav-item"><a href="/site">网站管理</a></li>
+        </ul>
+        <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item"><a href="javascript:;">{{ user }}</a>
+            <dl class="layui-nav-child">
+                <dd><a href="">修改密码</a></dd>
+                <dd><a href="/loginout">退出</a></dd>
+            </dl>
+            </li>
+        </ul>
+    </div>
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+        <ul class="layui-nav layui-nav-tree" lay-filter="test">
+            <li class="layui-nav-item"><a href="javascript:;">系统首页</a>
+            </li>
+            <li class="layui-nav-item"><a href="site">网站管理</a>
+            </li>
+             <li class="layui-nav-item"><a href="javascript:;">MYSQL</a>
+            </li>
+             <li class="layui-nav-item"><a href="javascript:;">FTP管理</a>
+            </li>
+             <li class="layui-nav-item"><a href="/softinstall">软件安装</a>
+            </li>
+            <li class="layui-nav-item"><a href="javascript:;">面板设置</a>
+            </li>
+            <li class="layui-nav-item"><a href="javascript:;">退出登陆</a>
+            </li>
+        </ul>
+        </div>
+  </div>
+    <div class="layui-body layui-bg-gray">
+    <!-- 内容主体区域 -->
+    <div style="padding: 15px;">
+    <blockquote class="layui-elem-quote tag-color">
+            <span class="layui-breadcrumb">
+                <a href="index">首页</a>
+                {% if tag == 1 %}
+                <a href="softinstall">{{ model }}</a>
+                {% endif %}
+            </span>
+        </blockquote>
+        {% block content %} {% endblock content %}
+    </div>
+  </div>
+    <div class="layui-footer">
+
+    </div>
+</div>
+
+</body>
+<script src="/static/layui.js"></script>
+<script src="/static/jquery.js"></script>
+<script>
+    layui.use(['element','layer','form','layedit'],function () {
+        var element = layui.element
+            ,layer = layui.layer
+            ,layedit = layui.layedit
+            ,form = layui.form;
+    });
+
+    $('#addsite').click(function () {
+        layer.open({
+            type:2,
+            title:"添加站点",
+            content:['/addsite','no'],
+            shade:[0.5,'#393D49'],
+            area:['700px','550px'],
+            closeBtn:2
+        });
+    });
+</script>
+{% block endscript %}
+{% endblock %}
+</html>

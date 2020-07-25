@@ -1,0 +1,55 @@
+<link rel="stylesheet" href="/static/css/layui.css">
+<link rel="stylesheet" href="/static/css/admin.css">
+<div style="width:280px;margin-left:10px;">
+    <input type="text" style="height:28px;width:230px;" placeholder="请填写分类名称" name="sitetag">
+    <span class="layui-btn layui-btn-sm" style="float:right;" id="addtag">添加</span><br>
+    <table class="layui-table" lay-skin="line" id="tabtag"><colgroup><col width="140"><col width="140"></colgroup>
+        <thead><tr><th>名称</th><th>操作</th></tr>
+        </thead>
+        <tbody>
+        {% for tag in sitetags %}
+            <tr><td>{{ tag.1 }}</td>
+                {% if tag.0 == 1 %}
+                    <td id="{{ tag.0 }}" style="color:#ccc;pointer-events:none">禁删</td>
+                {% else %}
+                    <td class="tags" id="{{ tag.0 }}" >删除</td>
+                {% endif %}
+            </tr>{% endfor %}
+     </tbody>
+    </table>
+</div>
+<script src="/static/layui.js"></script>
+<script src="/static/jquery.js"></script>
+<script>
+    layui.use(['layer'],function () {
+        var layer=layui.layer;
+        $('#addtag').click(function () {
+            var sitetag = $('input[name=sitetag]').val();
+            if(sitetag){
+                //添加并返回id
+                $.post('/addtag',{'tags':sitetag,'method':'add'},function (data) {
+                    if (data > 0){
+                        layer.msg("添加成功",{icon:6});
+                        $("#tabtag").append("<tr><td class='tags'>"+sitetag+"</td><td class='tags' id='"+data+"'>删除</td></tr>");
+                    }
+                    else{
+                        layer.msg("已存在该分类",{icon:5});
+                    }
+                });
+            }
+        });
+        $('.tags').click(function () {
+            var id=$(this).attr('id');
+            layer.confirm("删除？",{icon:3},function (index) {
+                $.post('/addtag',{'id':id,'method':'del'},function (data) {
+                    if (data=="ok"){
+                        layer.msg("删除成功!",{icon:6});
+                        $("#"+id).parent().hide();
+                    }
+                });
+               layer.close(index);
+            });
+        });
+    });
+
+</script>

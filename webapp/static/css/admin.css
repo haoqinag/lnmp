@@ -1,0 +1,22 @@
+.soft-install{
+    font-size:26px;
+    color:blue;
+}
+.soft-icon{
+    width: 24px;
+    height: 22px;
+    margin-right:5px;
+}
+.tag-color{
+    background-color:#fff;
+}
+.containers{
+    padding: 0 15px;
+}
+.td-install{padding-left:5px!important;}
+/*add-site*/
+
+/*site*/
+.tags{
+    cursor: pointer;
+}
